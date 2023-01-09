@@ -4,9 +4,9 @@ from PIL import Image
 from torchvision import transforms
 from diffusers import StableDiffusionImageVariationPipeline
 def main(
-        input_im,
+        input_image,
         scale=3.0,
-        n_samples=5,
+        n_samples=4,
         steps=25,
         seed=0,
 ):
@@ -22,7 +22,7 @@ def main(
             [0.48145466, 0.4578275, 0.40821073],
             [0.26862954, 0.26130258, 0.27577711]),
     ])
-    inp = tform(input_im).to(device)
+    inp = tform(input_image).to(device)
     images_list = pipe(
         inp.tile(n_samples, 1, 1, 1),
         guidance_scale=scale,
@@ -41,6 +41,8 @@ def main(
 
 article = \
     """
+    Created by project_four team
+    github.com/computer-gibs/project_four
     """
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -51,7 +53,7 @@ pipe = pipe.to(device)
 inputs = [
     gr.Image(),
     gr.Slider(0, 30, value=3, step=1, label="Guidance Scale"),
-    gr.Slider(1, 5, value=1, step=1, label="Number of Images"),
+    gr.Slider(1, 4, value=1, step=1, label="Number of Images"),
     gr.Slider(5, 50, value=25, step=5, label="Steps"),
     gr.Number(0, label="Seed", precision=0)
 ]
@@ -59,7 +61,7 @@ output = gr.Gallery(label="Generated Variations")
 output.style(grid=2)
 
 demo = gr.Interface(
-    css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-size: 20px;}",
+    css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-weight: Bold}",
     fn=main,
     title="smart plagiarism",
     article=article,
