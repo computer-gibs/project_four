@@ -52,7 +52,7 @@ pipe = StableDiffusionImageVariationPipeline.from_pretrained(
 pipe = pipe.to(device)
 inputs = [
     gr.Image(),
-    gr.Slider(0, 30, value=3, step=1, label="Уровень схожести"),
+    gr.Slider(0, 25, value=3, step=1, label="Уровень схожести"),
     gr.Slider(1, 4, value=1, step=1, label="Количество вариантов изображения"),
     gr.Slider(5, 50, value=25, step=5, label="Шаги для генерации"),
     gr.Number(0, label="Сид для генерации", precision=0)
