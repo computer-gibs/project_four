@@ -41,7 +41,7 @@ def main(
 
 article = \
     """
-    Created by project_four team
+    Создано командой project_four 
     github.com/computer-gibs/project_four
     """
 
@@ -52,15 +52,16 @@ pipe = StableDiffusionImageVariationPipeline.from_pretrained(
 pipe = pipe.to(device)
 inputs = [
     gr.Image(),
-    gr.Slider(0, 30, value=3, step=1, label="Guidance Scale"),
-    gr.Slider(1, 4, value=1, step=1, label="Number of Images"),
-    gr.Slider(5, 50, value=25, step=5, label="Steps"),
-    gr.Number(0, label="Seed", precision=0)
+    gr.Slider(0, 30, value=3, step=1, label="Уровень схожести"),
+    gr.Slider(1, 4, value=1, step=1, label="Количество вариантов изображения"),
+    gr.Slider(5, 50, value=25, step=5, label="Шаги для генерации"),
+    gr.Number(0, label="Сид для генерации", precision=0)
 ]
-output = gr.Gallery(label="Generated Variations")
+output = gr.Gallery(label="Сгенерированные варианты")
 output.style(grid=2)
 
 demo = gr.Interface(
+    allow_flagging="never",
     css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-weight: Bold}",
     fn=main,
     title="smart plagiarism",
