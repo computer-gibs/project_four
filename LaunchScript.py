@@ -59,6 +59,7 @@ output = gr.Gallery(label="Generated Variations")
 output.style(grid=2)
 
 demo = gr.Interface(
+    css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-size: 20px;}",
     fn=main,
     title="smart plagiarism",
     article=article,
