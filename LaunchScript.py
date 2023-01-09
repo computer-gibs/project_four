@@ -37,9 +37,7 @@ def main(
         else:
             images.append(image)
     return images
-description = \
-    """
-    """
+
 
 article = \
     """
@@ -59,17 +57,12 @@ inputs = [
 ]
 output = gr.Gallery(label="Generated Variations")
 output.style(grid=2)
-examples = [
-    ["D:/testimage.jpg", 3, 1, 25, 0],
-]
 
 demo = gr.Interface(
     fn=main,
     title="smart plagiarism",
-    description=description,
     article=article,
     inputs=inputs,
     outputs=output,
-    examples=examples,
 )
 demo.launch()
