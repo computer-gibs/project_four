@@ -3,3 +3,4 @@ torch
 pillow
 torchvision
 diffusers
+transformers
