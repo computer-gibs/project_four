@@ -62,7 +62,7 @@ output.style(grid=2)
 
 demo = gr.Interface(
     allow_flagging="never",
-    css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-weight: Bold}",
+    css="body {background-color: white; font-family: 'Roboto'; font-style: normal; font-weight: Bold;}",
     fn=main,
     title="smart plagiarism",
     article=article,
