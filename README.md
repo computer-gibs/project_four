@@ -1,14 +1,18 @@
 # smart plagiarism - веб-приложение для генерации аналогичных изображений
 Проект по дисциплине: "Программная инженерия"
+# Функционал приложения
+Генерация аналогичных изображений, основанная на загруженном графическом файле (.jpg/.png)
+# Целевая аудитория
+* Графические дизайнеры, дизайнеры интерьера, web-дизайнеры (во избежание нарушения авторских прав)
+* Художники, графические художники (поиск референсов и идей)
+* NFT-художники (генерация целой коллекции из одного изображения)
 # Команда
 * [Ярослав Алимпиев](https://github.com/Arimaro) — UX/UI-дизайн
 * [Александр Никитин](https://github.com/AleksNikitin24) — разработка тестов, настройка GitHub Actions
 * [Александр Калиберда](https://github.com/computer-gibs) — тимлид, основной код приложения
 * [Александра Григорьева](https://github.com/grigorieva0) — развертывание приложения в Яндекс.Облако
-# Функционал приложения
-Генерация аналогичных изображений, основанная на загруженном графическом файле (.jpg/.png)
-# Ссылки
-* [Развернутая модель](https://google.com)
-* [Hugging Face](https://huggingface.co/lambdalabs/sd-image-variations-diffusers)
+# Ссылки на источники
+* [Stable Diffusion Image Variations](https://huggingface.co/lambdalabs/sd-image-variations-diffusers)
+* [Lambda-Diffusers](https://github.com/LambdaLabsML/lambda-diffusers)
 
 
